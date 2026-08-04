@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/program-private", "destination": "/program-private.html" },
+    { "source": "/program-group", "destination": "/program-group.html" },
+    { "source": "/tutor", "destination": "/tutor.html" },
+    { "source": "/testimoni", "destination": "/testimoni.html" }
+  ]
+}
