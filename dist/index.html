@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xuehan Academy Online Class</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+  <link rel="stylesheet" crossorigin href="/assets/style-mG0MVRtV.css">
+</head>
+
+<body class="antialiased text-slate-800 bg-[#FAF6F0]">
+
+    <!-- ============================================= -->
+    <!-- HERO + NAVBAR CONTAINER (Warm Cream & Warm Red) -->
+    <!-- ============================================= -->
+    <div
+        class="relative bg-gradient-to-br from-[#F5ECE1] via-[#FAF6F0] to-[#F3E5D8] min-h-screen text-slate-800 overflow-hidden border-b border-rose-900/10">
+        <!-- Accent Glow Light -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-rose-400/15 blur-[120px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10">
+            <!-- 1. NAVBAR -->
+            <header class="container mx-auto px-6 py-5 flex items-center justify-between relative">
+    <!-- 1. Logo (Kiri) -->
+    <a href="/" class="flex items-center gap-2">
+        <div class="bg-white p-2.5 rounded-2xl shadow-sm border border-rose-100">
+            <img src="/assets/logo-pgr_L65R.jpeg" alt="Xuehan Academy Logo" class="h-7 w-auto" />
+        </div>
+    </a>
+
+    <!-- 2. Navigation Links (Tengah Absolut) -->
+    <nav
+        class="hidden md:flex items-center gap-1 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-rose-900/10 text-sm font-medium shadow-sm absolute left-1/2 -translate-x-1/2">
+        <a href="/" class="nav-link px-4 py-2 rounded-full text-slate-700 hover:text-rose-700 transition">Home</a>
+
+        <!-- Dropdown Programs -->
+        <div class="relative group">
+            <button id="programs-dropdown-btn"
+                class="px-1 py-2 text-slate-700 hover:text-rose-700 flex items-center gap-1 transition rounded-full">
+                Programs
+                <svg class="w-4 h-4 fill-current opacity-70 group-hover:opacity-100" viewBox="0 0 20 20">
+                    <path
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                </svg>
+            </button>
+
+            <!-- Menu Dropdown -->
+            <div class="absolute top-full left-0 hidden group-hover:block pt-2 w-52">
+                <div
+                    class="bg-white/95 backdrop-blur-xl text-slate-700 rounded-2xl shadow-xl py-3 border border-rose-100">
+                    <a href="/program-private"
+                        class="nav-link block px-4 py-2.5 hover:bg-rose-50 hover:text-rose-700 transition">Private</a>
+                    <a href="/program-group"
+                        class="nav-link block px-4 py-2.5 hover:bg-rose-50 hover:text-rose-700 transition">Group</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="/about" class="nav-link px-4 py-2 rounded-full text-slate-700 hover:text-rose-700 transition">About</a>
+        <a href="/tutor" class="nav-link px-4 py-2 rounded-full text-slate-700 hover:text-rose-700 transition">Tutor</a>
+        <a href="/testimoni"
+            class="nav-link px-4 py-2 rounded-full text-slate-700 hover:text-rose-700 transition">Testimoni</a>
+    </nav>
+
+    <!-- 3. Tombol CTA (Kanan) -->
+    <a href="https://wa.me/628123456789" target="_blank"
+        class="hidden sm:flex items-center gap-2.5 px-6 py-2.5 bg-rose-700 hover:bg-rose-800 text-white font-bold text-sm rounded-full shadow-md shadow-rose-700/20 transition hover:scale-105 active:scale-95">
+        <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+            <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+        </svg>
+        Konsultasi Gratis
+    </a>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const normalizePath = (path) => {
+            if (!path) return '/';
+            return path.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+        };
+
+        const currentPath = normalizePath(window.location.pathname);
+        const navLinks = document.querySelectorAll('.nav-link');
+        const dropdownBtn = document.getElementById('programs-dropdown-btn');
+
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (!href) return;
+
+            const linkPath = normalizePath(href);
+
+            // Cek apakah URL sekarang cocok dengan href
+            if (currentPath === linkPath) {
+                if (linkPath.includes('program')) {
+                    link.classList.add('dropdown-item-active', 'bg-rose-50', 'text-rose-700');
+                    if (dropdownBtn) {
+                        dropdownBtn.classList.add('dropdown-btn-active', 'text-rose-700', 'font-bold');
+                    }
+                } else {
+                    link.classList.remove('text-slate-700');
+                    link.classList.add('nav-active', 'text-rose-700', 'font-bold', 'bg-rose-100/50');
+                }
+            }
+        });
+    });
+</script>
+
+            <!-- 2. HERO CONTENT -->
+            <section class="container mx-auto px-6 py-20 md:py-28 text-center">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/80 border border-rose-200 text-rose-800 text-xs sm:text-sm font-bold mb-6 shadow-sm">
+                    ✨ Kursus Mandarin Praktis & Interaktif
+                </div>
+
+                <h1
+                    class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6 max-w-4xl mx-auto text-slate-900">
+                    Kuasai Mandarin, Raih <span
+                        class="bg-gradient-to-r from-rose-700 to-amber-600 bg-clip-text text-transparent">Gaji Minimal 2
+                        Digit!</span>
+                </h1>
+                <p
+                    class="text-base sm:text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+                    Belajar langsung dari praktisi yang pernah tinggal di China. Dari nol sampai jago HSK, kami bantu
+                    kamu siap bersaing di perusahaan global dengan cara yang seru dan anti-ngebosenin.
+                </p>
+                <a href="#program"
+                    class="inline-block px-8 py-4 bg-rose-700 hover:bg-rose-800 text-white font-extrabold rounded-full shadow-lg shadow-rose-700/25 transition hover:scale-105 text-base sm:text-lg">
+                    Lihat Pilihan Kelas
+                </a>
+            </section>
+        </div>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- 3. PROGRAM SECTION -->
+    <!-- ============================================= -->
+    <section id="program" class="bg-[#FAF6F0] py-20 md:py-28 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+                    Pilih Program yang Sesuai
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    Temukan metode belajar yang paling cocok dengan target dan fleksibilitas waktu Anda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-2xl mx-auto justify-center">
+                <div
+                    class="bg-white border border-rose-900/10 p-6 rounded-3xl shadow-sm flex flex-col justify-between hover:border-rose-600 hover:shadow-xl transition duration-300">
+                    <div>
+                        <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">Kelas Private</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1 mb-3">Private</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Kelas Mandarin eksklusif 1-on-1 dengan Laoshi dan jadwal pilihan
+                        </p>
+                    </div>
+                    <a href="/programs-private"
+                        class="block w-full text-center py-3 bg-[#F5ECE1] hover:bg-rose-700 hover:text-white border border-rose-900/5 text-slate-700 font-semibold text-sm rounded-xl transition duration-200">
+                        Lihat Detail
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white border border-rose-900/10 p-6 rounded-3xl shadow-sm flex flex-col justify-between hover:border-rose-600 hover:shadow-xl transition duration-300">
+                    <div>
+                        <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">Kelas Group</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-1 mb-3">Group</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                            Kelas Mandarin yang berisi 4 - 10 orang.
+                        </p>
+                    </div>
+                    <a href="/programs-group"
+                        class="block w-full text-center py-3 bg-[#F5ECE1] hover:bg-rose-700 hover:text-white border border-rose-900/5 text-slate-700 font-semibold text-sm rounded-xl transition duration-200">
+                        Lihat Detail
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 4. WHY US SECTION -->
+    <!-- ============================================= -->
+    <section class="bg-[#F5ECE1] py-20 border-t border-rose-900/5 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-slate-900 mb-16">
+                Mengapa Belajar di Xuehan Academy Mandarin?
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-white border border-rose-900/5 p-8 rounded-3xl text-center shadow-sm hover:shadow-md transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18c-2.305 0-4.408.867-6 2.292m0-14.25v14.25" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Materi Digital & Fisik</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dapatkan akses modul digital interaktif serta buku fisik eksklusif untuk menunjang proses
+                        belajarmu di mana saja.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-rose-900/5 p-8 rounded-3xl text-center shadow-sm hover:shadow-md transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84 51.38 51.38 0 00-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Kurikulum Komprehensif</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Materi disusun terstruktur sesuai standar internasional HSK untuk memastikan penguasaan tata
+                        bahasa dan percakapan harian.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-rose-900/5 p-8 rounded-3xl text-center shadow-sm hover:shadow-md transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0ZM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Pengajar Profesional</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Tutor kami adalah praktisi berpengalaman dan lulusan universitas ternama di China yang siap
+                        membimbingmu hingga mahir.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-rose-900/5 p-8 rounded-3xl text-center shadow-sm hover:shadow-md transition duration-300 lg:col-start-1 lg:translate-x-1/2">
+                    <div
+                        class="w-16 h-16 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.746 3.746 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Sertifikat Resmi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dapatkan sertifikat kelulusan resmi setelah menyelesaikan program sebagai nilai tambah
+                        portofolio karir atau pendidikanmu.
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white border border-rose-900/5 p-8 rounded-3xl text-center shadow-sm hover:shadow-md transition duration-300 lg:col-start-2 lg:translate-x-1/2">
+                    <div
+                        class="w-16 h-16 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.493 1.508 1.333 1.508 2.316V18" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Tips Beasiswa & Studi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dapatkan konsultasi gratis dan panduan eksklusif mengenai pendaftaran beasiswa serta kehidupan
+                        studi langsung di China.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================= -->
+    <!-- 5. CONSULTATION FORM SECTION -->
+    <!-- ============================================= -->
+    <section class="bg-gradient-to-r from-rose-900 via-rose-800 to-rose-950 py-20 text-white relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-amber-200 mb-12">
+                Belum Tahu Harus Mulai dari Mana?
+            </h2>
+
+            <div
+                class="max-w-5xl mx-auto bg-white backdrop-blur-xl border border-white/20 rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-slate-800">
+                <div>
+                    <h3 class="text-2xl sm:text-3xl font-bold leading-tight mb-4 text-slate-900">
+                        Ceritakan tujuanmu, tim Xuehan Academy siap membantu. <span class="text-rose-700">Gratis!</span>
+                    </h3>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Tinggalkan kontakmu, dan tim Xuehan Academy akan menghubungimu kurang dari 24 jam via WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Mengganti event submit dengan fungsi JavaScript -->
+                <form class="space-y-4" onsubmit="sendToWhatsApp(event)">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">Nama</label>
+                        <input type="text" id="wa-name" required placeholder="Masukkan nama lengkap"
+                            class="w-full px-4 py-3 bg-[#FAF6F0] border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-rose-600 transition" />
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">Nomor WhatsApp</label>
+                        <input type="tel" id="wa-phone" required placeholder="Masukkan nomor whatsapp"
+                            class="w-full px-4 py-3 bg-[#FAF6F0] border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-rose-600 transition" />
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5">Tujuan Belajar</label>
+                        <input type="text" id="wa-goal" required placeholder="Masukkan tujuan belajar"
+                            class="w-full px-4 py-3 bg-[#FAF6F0] border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:border-rose-600 transition" />
+                    </div>
+
+                    <button type="submit"
+                        class="w-full py-3.5 bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-rose-700/20 mt-2 flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+                            <path
+                                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                        </svg>
+                        Konsultasi Gratis via Whatsapp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+
+            // 1. Ganti nomor WhatsApp tujuan Xuehan Academy di sini (Gunakan kode negara, misal 62)
+            const targetPhoneNumber = "628123456789";
+
+            // 2. Ambil data dari input form
+            const name = document.getElementById('wa-name').value;
+            const phone = document.getElementById('wa-phone').value;
+            const goal = document.getElementById('wa-goal').value;
+
+            // 3. Format pesan yang akan dikirim ke WhatsApp
+            const message = `Halo Tim Xuehan Academy, saya ingin konsultasi gratis.\n\n` +
+                `*Nama:* ${name}\n` +
+                `*No. WhatsApp:* ${phone}\n` +
+                `*Tujuan Belajar:* ${goal}`;
+
+            // 4. Encode pesan agar sesuai format URL
+            const encodedMessage = encodeURIComponent(message);
+
+            // 5. Buka link WhatsApp di tab baru
+            window.open(`https://wa.me/${targetPhoneNumber}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+
+    <!-- ============================================= -->
+    <!-- 6. FOOTER SECTION -->
+    <!-- ============================================= -->
+    <footer class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800 relative">
+    <div class="container mx-auto px-6">
+        <!-- Grid Utama Footer -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+            <!-- Kolom 1: Profil & Alamat -->
+            <div class="lg:col-span-2 space-y-6">
+                <div class="inline-block bg-white p-2.5 rounded-2xl shadow-lg">
+                    <img src="/assets/logo-pgr_L65R.jpeg" alt="Xuehan Academy Logo" class="h-8 w-auto" />
+                </div>
+                <p class="text-sm text-slate-400 max-w-sm leading-relaxed">
+                    Kelas bahasa asing online interaktif dengan tutor praktisi buat pembelajaran makin menyenangkan!
+                </p>
+                <div class="space-y-1 text-sm">
+                    <h4 class="font-bold text-white">Xuehan Academy</h4>
+                </div>
+            </div>
+
+            <!-- Kolom 2: Quick Links -->
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-amber-300 text-xs tracking-wider uppercase mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/" class="hover:text-white transition">Beranda</a></li>
+                        <li><a href="/about" class="hover:text-white transition">About</a></li>
+                        <li><a href="/tutor" class="hover:text-white transition">Tutor</a></li>
+                        <li><a href="/testimoni" class="hover:text-white transition">Testimoni</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Kolom 3: Follow Us -->
+            <div>
+                <h4 class="font-bold text-amber-300 text-xs tracking-wider uppercase mb-3">Follow Us</h4>
+                <div class="grid grid-cols-2 lg:grid-cols-1 gap-x-4 gap-y-2 text-xs">
+                    <span class="font-bold text-slate-200 mt-1 col-span-2 lg:col-span-1">Instagram</span>
+                    <a href="https://www.instagram.com/xuehan_accid/" class="hover:text-white transition">Xuehan Academy Mandarin</a>
+                </div>
+            </div>
+
+            <!-- Kolom 4: Kontak -->
+            <div class="space-y-6">
+                <div>
+                    <h4 class="font-bold text-amber-300 text-xs tracking-wider uppercase mb-3">Kontak</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li class="flex items-center gap-2">
+                            <span class="text-amber-300">📱</span>
+                            <span>+62 812-9045-8399 (Admin WA)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-amber-300">✉️</span>
+                            <span>mandarin@Xuehan Academy.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+            <p>© 2026 Xuehan Academy. All rights reserved.</p>
+            <div class="flex items-center gap-6">
+                <a href="/privacy-policy" class="hover:text-slate-300 transition">Privacy Policy</a>
+                <a href="/cookies-policy" class="hover:text-slate-300 transition">Cookies Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

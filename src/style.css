@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.nav-active {
+  @apply !bg-rose-700 !text-white !font-semibold !shadow-sm;
+}
+
+.dropdown-item-active {
+  @apply !bg-rose-50 !text-rose-700 !font-semibold;
+}
+
+.dropdown-btn-active {
+  @apply !text-rose-700 !font-semibold;
+}
