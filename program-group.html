@@ -12,6 +12,39 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
+        /* Animasi Mengapung Halus untuk Elemen Dekoratif */
+        @keyframes float-slow {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(3deg);
+            }
+        }
+
+        @keyframes float-reverse {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(10px) rotate(-3deg);
+            }
+        }
+
+        .animate-float {
+            animation: float-slow 6s ease-in-out infinite;
+        }
+
+        .animate-float-del {
+            animation: float-reverse 7s ease-in-out infinite 1s;
+        }
     </style>
 </head>
 
@@ -21,40 +54,71 @@
     <!-- HERO + NAVBAR CONTAINER -->
     <!-- ============================================= -->
     <div
-        class="relative bg-gradient-to-br from-[#F5ECE1] via-[#FAF6F0] to-[#F3E5D8] text-slate-800 border-b border-rose-900/10">
-        <!-- Accent Glow Light -->
+        class="relative bg-gradient-to-br from-[#F5ECE1] via-[#FAF6F0] to-[#F1E0D0] text-slate-800 border-b border-rose-900/10 overflow-hidden">
+
+        <!-- Pattern Grid & Gradient Glow -->
         <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-amber-400/15 blur-[120px] pointer-events-none">
+            class="absolute inset-0 bg-[radial-gradient(#e11d48_0.75px,transparent_0.75px)] [background-size:24px_24px] opacity-[0.08] pointer-events-none">
         </div>
+        <div class="absolute -top-24 -left-20 w-96 h-96 bg-rose-400/20 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div class="absolute top-1/2 -right-20 w-96 h-96 bg-amber-400/20 blur-[110px] rounded-full pointer-events-none">
+        </div>
+
+        <!-- Floating Decorative Icons / Badges -->
+        <div
+            class="hidden lg:flex absolute top-32 left-12 animate-float items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-amber-200/80 pointer-events-none z-10">
+            <span class="text-2xl">👥</span>
+            <div>
+                <p class="text-xs font-bold text-slate-800">Small Group Class</p>
+                <p class="text-[10px] text-slate-500">Maksimal 6 - 8 Peserta</p>
+            </div>
+        </div>
+
+        <div
+            class="hidden lg:flex absolute bottom-20 right-12 animate-float-del items-center gap-3 bg-white/90 backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-lg border border-rose-200/80 pointer-events-none z-10">
+            <span class="text-2xl">🏷️</span>
+            <div>
+                <p class="text-xs font-bold text-slate-800">Mulai Rp399.000</p>
+                <p class="text-[10px] text-slate-500">Hemat untuk 9x Pertemuan</p>
+            </div>
+        </div>
+
+        <!-- Chinese Cloud Accent -->
+        <svg class="absolute bottom-2 left-6 text-rose-900/10 w-32 h-32 pointer-events-none" fill="currentColor"
+            viewBox="0 0 24 24">
+            <path
+                d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+        </svg>
 
         <div class="relative z-10">
             <!-- 1. NAVBAR -->
             <load src="src/components/navbar.html" />
 
             <!-- 2. HERO GROUP -->
-            <section class="container mx-auto px-6 py-16 md:py-20 text-center">
+            <section class="container mx-auto px-6 py-16 md:py-24 text-center">
                 <div class="container mx-auto px-6 text-center max-w-4xl">
                     <span
-                        class="inline-block px-4 py-1.5 rounded-full bg-amber-100 border border-amber-200 text-amber-900 text-xs sm:text-sm font-bold mb-4 shadow-sm">
-                        👥 Interactive Small Group Class
+                        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs sm:text-sm font-bold mb-6 shadow-sm">
+                        <span>👥</span> Interactive Small Group Class
                     </span>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
                         Belajar <span
-                            class="bg-gradient-to-r from-rose-700 to-amber-600 bg-clip-text text-transparent">Group
+                            class="bg-gradient-to-r from-rose-700 via-rose-800 to-amber-600 bg-clip-text text-transparent">Group
                             Mandarin</span> Seru & Hemat
                     </h1>
-                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-                        Diskusi interaktif bersama teman-teman seperjuangan dengan jumlah siswa terbatas per kelas
-                        (maksimal 6-8 peserta) agar suasana belajar tetap fokus.
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto font-medium">
+                        Diskusi interaktif bersama teman-teman seperjuangan dengan kelas terbatas (6-8 peserta). Pilihan
+                        program mulai dari Beginner Level 2, Bisnis Level 1, hingga HSK Preparation Level 2.
                     </p>
                     <div class="flex flex-wrap items-center justify-center gap-4">
-                        <a href="https://wa.me/6281290458399?text=Halo%20Admin,%20saya%20tertarik%20dengan%20Program%20Group%20Mandarin"
+                        <a href="https://wa.me/6281779493263?text=Halo%20Admin,%20saya%20tertarik%20dengan%20Program%20Group%20Mandarin"
                             target="_blank"
-                            class="px-8 py-3.5 bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full shadow-lg transition hover:scale-105 text-sm sm:text-base">
-                            Daftar Batch Terdekat
+                            class="px-8 py-3.5 bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full shadow-lg shadow-rose-900/20 transition hover:scale-105 text-sm sm:text-base">
+                            Daftar Mulai Rp399.000
                         </a>
                         <a href="#level"
-                            class="px-8 py-3.5 bg-white hover:bg-rose-50 text-slate-800 font-bold rounded-full shadow-sm border border-rose-900/10 transition text-sm sm:text-base">
+                            class="px-8 py-3.5 bg-white hover:bg-rose-50 text-slate-800 font-bold rounded-full shadow-sm border border-rose-900/15 transition text-sm sm:text-base">
                             Pilihan Level
                         </a>
                     </div>
@@ -66,37 +130,55 @@
     <!-- ============================================= -->
     <!-- 3. FITUR UTAMA GROUP CLASS -->
     <!-- ============================================= -->
-    <section class="py-20 bg-[#FAF6F0]">
-        <div class="container mx-auto px-6">
+    <section class="py-20 bg-[#FAF6F0] relative overflow-hidden">
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#991b1b12_1px,transparent_1px),linear-gradient(to_bottom,#991b1b12_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none">
+        </div>
+
+        <div class="absolute top-10 left-[-100px] w-80 h-80 bg-rose-300/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-10 right-[-100px] w-80 h-80 bg-amber-300/30 rounded-full blur-3xl pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">Suasana Belajar</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-4">
+                <span
+                    class="inline-block text-xs font-extrabold text-rose-800 uppercase tracking-widest bg-rose-100/80 px-3 py-1 rounded-md border border-rose-200">
+                    Suasana Belajar
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">
                     Mengapa Memilih Group Class?
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base">
-                    Pembelajaran interaktif dengan biaya terjangkau tanpa mengurangi kualitas pendampingan.
+                    Pembelajaran interaktif dengan biaya terjangkau tanpa mengurangi kualitas pendampingan tutor.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm hover:shadow-md transition">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white/95 backdrop-blur-sm p-8 rounded-3xl border border-rose-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative group">
                     <div
-                        class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        class="w-14 h-14 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">Small Class Size</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Maksimal 6 - 8 peserta per kelas untuk memastikan setiap peserta mendapat kesempatan praktik
-                        bicara yang adil.
+                        Maksimal 6 - 8 peserta per kelas untuk memastikan setiap orang mendapat kesempatan praktik
+                        bicara yang optimal.
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                <!-- Card 2 -->
+                <div
+                    class="bg-white/95 backdrop-blur-sm p-8 rounded-3xl border border-rose-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative group">
+                    <div
+                        class="w-14 h-14 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
@@ -108,18 +190,20 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm hover:shadow-md transition">
+                <!-- Card 3 -->
+                <div
+                    class="bg-white/95 backdrop-blur-sm p-8 rounded-3xl border border-rose-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 relative group">
                     <div
-                        class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-6">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        class="w-14 h-14 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Biaya Hemat & Efektif</h3>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Biaya Super Hemat</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
-                        Solusi terbaik untuk kamu yang ingin belajar terstruktur dan terjangkau dengan kurikulum standar
-                        internasional.
+                        Hanya dengan investasi mulai Rp399.000 untuk paket 9x pertemuan, kamu sudah mendapatkan
+                        kurikulum standar internasional.
                     </p>
                 </div>
             </div>
@@ -127,89 +211,140 @@
     </section>
 
     <!-- ============================================= -->
-    <!-- 4. PILIHAN LEVEL BATCH -->
+    <!-- 4. PILIHAN PROGRAM / LEVEL GROUP CLASS -->
     <!-- ============================================= -->
-    <section id="level" class="bg-[#F5ECE1] py-20 border-t border-rose-900/5">
-        <div class="container mx-auto px-6">
+    <section id="level"
+        class="bg-gradient-to-b from-[#F3E5D8] via-[#FAF6F0] to-[#F3E5D8] py-20 border-t border-rose-900/10 relative overflow-hidden">
+
+        <div
+            class="absolute inset-0 bg-[radial-gradient(#b91c1c_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.07] pointer-events-none">
+        </div>
+
+        <div class="absolute top-12 left-8 text-8xl font-black text-rose-900/5 select-none pointer-events-none">友</div>
+        <div class="absolute bottom-12 right-8 text-8xl font-black text-amber-900/5 select-none pointer-events-none">班
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">Level Pembelajaran</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-4">
-                    Pilih Level Group Class
+                <span
+                    class="inline-block text-xs font-extrabold text-rose-800 uppercase tracking-widest bg-rose-100/80 px-3 py-1 rounded-md border border-rose-200">
+                    Pilihan Program
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">
+                    Program Group Class
                 </h2>
                 <p class="text-slate-600 text-sm sm:text-base">
-                    Temukan tingkatan kelas yang pas dengan pemahaman bahasa Mandarin saat ini.
+                    Semua program berdurasi paket 9x pertemuan dengan opsi kelas yang dapat disesuaikan.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Level 1 -->
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm flex flex-col justify-between">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <!-- Level 1: Beginner Level 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-rose-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <span
-                            class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full inline-block mb-4">Pemula</span>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Basic Mandarin (HSK 1-2)</h3>
-                        <p class="text-xs text-slate-500 mb-6">Untuk kamu yang belum pernah belajar Mandarin sama
-                            sekali.</p>
+                            class="text-xs font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full inline-block mb-4 border border-amber-200">Level
+                            Dasar</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-1">Beginner Level 2</h3>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-500 block">Biaya Investasi</span>
+                            <span class="text-2xl font-extrabold text-rose-700">Rp399.000 <span
+                                    class="text-xs font-normal text-slate-500">/ 9x sesi</span></span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6">Lanjutan pemantapan fondasi dasar tata bahasa dan
+                            percakapan harian.</p>
                         <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8">
-                            <li class="flex items-center gap-2">✓ Penguasaan Pinyin & Nada Dasar</li>
-                            <li class="flex items-center gap-2">✓ Percakapan Perkenalan & Sehari-hari</li>
-                            <li class="flex items-center gap-2">✓ Target 150 - 300 Kosakata Baru</li>
-                            <li class="flex items-center gap-2">✓ Sesi 1.5 Jam per Pertemuan</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> 9x
+                                Pertemuan Interaktif</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Penguatan Pinyin & Nada Mandarin</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Percakapan Situasi Sehari-hari</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> Modul &
+                                Rekaman Kelas</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Komunitas Praktik & Grup Diskusi</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/6281290458399?text=Halo%20Admin,%20saya%20mau%20daftar%20Group%20Class%20Basic%20Mandarin"
+                    <a href="https://wa.me/6281779493263?text=Halo%20Admin,%20saya%20mau%20daftar%20Group%20Class%20Beginner%20Level%202"
                         target="_blank"
-                        class="w-full py-3 text-center bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full transition text-sm">
-                        Daftar Level Basic
+                        class="w-full py-3 text-center bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full transition text-sm shadow-md">
+                        Daftar Beginner L2
                     </a>
                 </div>
 
-                <!-- Level 2 -->
+                <!-- Level 2: Bisnis Level 1 (Featured) -->
                 <div
-                    class="bg-white p-8 rounded-3xl border-2 border-rose-700 shadow-md flex flex-col justify-between relative">
+                    class="bg-white p-8 rounded-3xl border-2 border-rose-700 shadow-xl flex flex-col justify-between relative transform md:-translate-y-2 z-10">
                     <span
-                        class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-rose-700 text-white text-xs font-bold px-4 py-1 rounded-full shadow">
-                        Batch Dibuka!
+                        class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-rose-700 to-amber-600 text-white text-xs font-bold px-4 py-1 rounded-full shadow-md">
+                        🔥 Paling Minat
                     </span>
                     <div>
                         <span
-                            class="text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-full inline-block mb-4 mt-2">Menengah</span>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Intermediate (HSK 3-4)</h3>
-                        <p class="text-xs text-slate-500 mb-6">Peningkatan tata bahasa dan diskusi topik sosial/kerja.
-                        </p>
+                            class="text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-full inline-block mb-4 mt-2 border border-rose-100">Level
+                            Karir</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-1">Bisnis Level 1</h3>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-500 block">Biaya Investasi</span>
+                            <span class="text-2xl font-extrabold text-rose-700">Rp399.000 <span
+                                    class="text-xs font-normal text-slate-500">/ 9x sesi</span></span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6">Persiapan kosa kata dan etika percakapan profesional
+                            untuk kebutuhan kerja.</p>
                         <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8">
-                            <li class="flex items-center gap-2">✓ Tatabahasa Kompleks & Aksara Hanzi</li>
-                            <li class="flex items-center gap-2">✓ Percakapan Kantor & Negosiasi Dasar</li>
-                            <li class="flex items-center gap-2">✓ Target 600+ Kosakata Baru</li>
-                            <li class="flex items-center gap-2">✓ Latihan Soal Simulasi HSK</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> 9x
+                                Pertemuan Interaktif</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Kosakata & Istilah Dunia Kerja</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Simulasi Percakapan Kantor & Klien</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> Modul &
+                                Rekaman Kelas</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Sertifikat Kelulusan Program</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/6281290458399?text=Halo%20Admin,%20saya%20mau%20daftar%20Group%20Class%20Intermediate"
+                    <a href="https://wa.me/6281779493263?text=Halo%20Admin,%20saya%20mau%20daftar%20Group%20Class%20Bisnis%20Level%201"
                         target="_blank"
-                        class="w-full py-3 text-center bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full transition text-sm">
-                        Daftar Level Intermediate
+                        class="w-full py-3 text-center bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full transition text-sm shadow-md">
+                        Daftar Bisnis L1
                     </a>
                 </div>
 
-                <!-- Level 3 -->
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm flex flex-col justify-between">
+                <!-- Level 3: HSK Preparation Level 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl border border-rose-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <span
-                            class="text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-full inline-block mb-4">Lanjutan</span>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Business Mandarin</h3>
-                        <p class="text-xs text-slate-500 mb-6">Fokus pada istilah bisnis, email formal, & presentasi.
-                        </p>
+                            class="text-xs font-bold text-rose-700 bg-rose-50 px-3 py-1 rounded-full inline-block mb-4 border border-rose-100">Level
+                            Ujian</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-1">HSK Prep Level 2</h3>
+                        <div class="mb-4">
+                            <span class="text-xs text-slate-500 block">Biaya Investasi</span>
+                            <span class="text-2xl font-extrabold text-rose-700">Rp399.000 <span
+                                    class="text-xs font-normal text-slate-500">/ 9x sesi</span></span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-6">Pembahasan materi serta strategi kelulusan ujian
+                            sertifikasi HSK Level 2.</p>
                         <ul class="space-y-3 text-xs sm:text-sm text-slate-600 mb-8">
-                            <li class="flex items-center gap-2">✓ Istilah Perdagangan & Industri</li>
-                            <li class="flex items-center gap-2">✓ Etika Bisnis Tiongkok/Taiwan</li>
-                            <li class="flex items-center gap-2">✓ Simulation Pitching & Interview</li>
-                            <li class="flex items-center gap-2">✓ Sertifikat Kualifikasi Kerja</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> 9x
+                                Pertemuan Interaktif</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> Bedah
+                                Soal & Strategi Ujian HSK 2</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span>
+                                Pendalaman Tata Bahasa (Grammar)</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> Latihan
+                                Soal & Tryout Berkala</li>
+                            <li class="flex items-center gap-2.5"><span class="text-rose-600 font-bold">✓</span> Modul
+                                Standar Sertifikasi HSK</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/6281290458399?text=Halo%20Admin,%20saya%20mau%20daftar%20Group%20Class%20Business%20Mandarin"
+                    <a href="https://wa.me/6281779493263?text=Halo%20Admin,%20saya%20mau%20daftar%20Group%20Class%20HSK%20Prep%20Level%202"
                         target="_blank"
-                        class="w-full py-3 text-center bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full transition text-sm">
-                        Daftar Level Business
+                        class="w-full py-3 text-center bg-rose-700 hover:bg-rose-800 text-white font-bold rounded-full transition text-sm shadow-md">
+                        Daftar HSK Prep L2
                     </a>
                 </div>
             </div>
@@ -225,10 +360,10 @@
                 Ingin Cek Placement Test Bebas Biaya?
             </h2>
             <p class="text-rose-100 mb-8 text-sm sm:text-base leading-relaxed">
-                Bingung masuk di level mana? Ikuti tes penempatan singkat untuk mengetahui kelas group mana yang paling
-                pas buat kamu.
+                Bingung harus memilih kelas yang mana? Ikuti tes penempatan singkat untuk mengetahui apakah Beginner
+                Level 2, Bisnis Level 1, atau HSK Prep Level 2 yang paling cocok untukmu.
             </p>
-            <a href="https://wa.me/6281290458399?text=Halo%20Admin,%20saya%20mau%20tes%20penempatan%20level%20Mandarin"
+            <a href="https://wa.me/6281779493263?text=Halo%20Admin,%20saya%20mau%20tes%20penempatan%20level%20Group%20Class"
                 target="_blank"
                 class="inline-block px-8 py-4 bg-white text-rose-900 hover:bg-rose-50 font-bold rounded-full shadow-lg transition hover:scale-105 text-sm sm:text-base">
                 Ikuti Placement Test

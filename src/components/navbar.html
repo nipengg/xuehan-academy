@@ -1,20 +1,21 @@
-<header class="container mx-auto px-6 py-5 flex items-center justify-between relative">
-    <!-- 1. Logo (Kiri) -->
-    <a href="/" class="flex items-center gap-2">
-        <div class="bg-white p-2.5 rounded-2xl shadow-sm border border-rose-100">
-            <img src="./src/assets/logo.jpeg" alt="Xuehan Academy Logo" class="h-7 w-auto" />
+<header class="container mx-auto px-6 py-3 flex items-center justify-between relative">
+    <!-- 1. Logo (Kiri) - Floating / Overlap Style -->
+    <a href="/" class="flex items-center gap-2 z-50 -mb-6 sm:-mb-8">
+        <div class="bg-white p-2 sm:p-2.5 rounded-2xl shadow-lg border border-rose-100 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
+            <!-- Logo persegi dibuat sedikit melampaui navbar -->
+            <img src="./src/assets/logo.jpeg" alt="Xuehan Academy Logo" class="h-16 w-16 sm:h-20 sm:w-20 md:h-22 md:w-22 object-cover rounded-xl" />
         </div>
     </a>
 
-    <!-- 2. Navigation Links (Tengah Absolut) -->
+    <!-- 2. Navigation Links (Desktop - Tengah Absolut) -->
     <nav
-        class="hidden md:flex items-center gap-1 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-rose-900/10 text-sm font-medium shadow-sm absolute left-1/2 -translate-x-1/2">
+        class="hidden lg:flex items-center gap-1 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-rose-900/10 text-sm font-medium shadow-sm absolute left-1/2 -translate-x-1/2">
         <a href="/" class="nav-link px-4 py-2 rounded-full text-slate-700 hover:text-rose-700 transition">Home</a>
 
         <!-- Dropdown Programs -->
         <div class="relative group">
             <button id="programs-dropdown-btn"
-                class="px-1 py-2 text-slate-700 hover:text-rose-700 flex items-center gap-1 transition rounded-full">
+                class="px-3 py-2 text-slate-700 hover:text-rose-700 flex items-center gap-1 transition rounded-full">
                 Programs
                 <svg class="w-4 h-4 fill-current opacity-70 group-hover:opacity-100" viewBox="0 0 20 20">
                     <path
@@ -22,10 +23,9 @@
                 </svg>
             </button>
 
-            <!-- Menu Dropdown -->
+            <!-- Menu Dropdown Desktop -->
             <div class="absolute top-full left-0 hidden group-hover:block pt-2 w-52">
-                <div
-                    class="bg-white/95 backdrop-blur-xl text-slate-700 rounded-2xl shadow-xl py-3 border border-rose-100">
+                <div class="bg-white/95 backdrop-blur-xl text-slate-700 rounded-2xl shadow-xl py-3 border border-rose-100">
                     <a href="/program-private"
                         class="nav-link block px-4 py-2.5 hover:bg-rose-50 hover:text-rose-700 transition">Private</a>
                     <a href="/program-group"
@@ -40,19 +40,89 @@
             class="nav-link px-4 py-2 rounded-full text-slate-700 hover:text-rose-700 transition">Testimoni</a>
     </nav>
 
-    <!-- 3. Tombol CTA (Kanan) -->
-    <a href="https://wa.me/628123456789" target="_blank"
-        class="hidden sm:flex items-center gap-2.5 px-6 py-2.5 bg-rose-700 hover:bg-rose-800 text-white font-bold text-sm rounded-full shadow-md shadow-rose-700/20 transition hover:scale-105 active:scale-95">
-        <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
-            <path
-                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-        </svg>
-        Konsultasi Gratis
-    </a>
+    <!-- 3. Tombol CTA & Hamburger Button (Kanan) -->
+    <div class="flex items-center gap-3 z-50">
+        <!-- CTA Desktop -->
+        <a href="https://wa.me/6281779493263" target="_blank"
+            class="hidden sm:flex items-center gap-2.5 px-6 py-2.5 bg-rose-700 hover:bg-rose-800 text-white font-bold text-sm rounded-full shadow-md shadow-rose-700/20 transition hover:scale-105 active:scale-95">
+            <svg class="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+                <path
+                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+            Konsultasi Gratis
+        </a>
+
+        <!-- Tombol Hamburger (Hanya Muncul di Mobile/Tablet) -->
+        <button id="mobile-menu-btn" aria-label="Toggle Menu"
+            class="lg:hidden p-2.5 rounded-2xl bg-white border border-rose-100 text-slate-700 hover:text-rose-700 shadow-sm transition">
+            <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- 4. Mobile Navigation Menu Dropdown -->
+    <div id="mobile-menu"
+        class="hidden lg:hidden absolute top-full left-0 right-0 w-full bg-white/95 backdrop-blur-xl border-b border-rose-100 shadow-xl px-6 py-4 transition-all duration-300 z-40">
+        <nav class="flex flex-col gap-2">
+            <a href="/" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Home</a>
+            
+            <!-- Accordion Programs Mobile -->
+            <div>
+                <button id="mobile-programs-btn"
+                    class="w-full px-4 py-2.5 text-left text-slate-700 hover:text-rose-700 flex items-center justify-between transition rounded-xl">
+                    <span>Programs</span>
+                    <svg id="mobile-arrow" class="w-4 h-4 fill-current opacity-70 transition-transform duration-200" viewBox="0 0 20 20">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    </svg>
+                </button>
+                <div id="mobile-programs-sub" class="hidden pl-4 pr-2 py-1 space-y-1">
+                    <a href="/program-private" class="nav-link block px-4 py-2 rounded-lg text-slate-600 hover:bg-rose-50 hover:text-rose-700 transition text-sm">Private</a>
+                    <a href="/program-group" class="nav-link block px-4 py-2 rounded-lg text-slate-600 hover:bg-rose-50 hover:text-rose-700 transition text-sm">Group</a>
+                </div>
+            </div>
+
+            <a href="/about" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">About</a>
+            <a href="/tutor" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Tutor</a>
+            <a href="/testimoni" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Testimoni</a>
+            
+            <!-- CTA Button khusus layar kecil/HP -->
+            <a href="https://wa.me/6281779493263" target="_blank"
+                class="sm:hidden mt-2 flex items-center justify-center gap-2.5 px-6 py-3 bg-rose-700 hover:bg-rose-800 text-white font-bold text-sm rounded-xl shadow-md transition">
+                Konsultasi Gratis
+            </a>
+        </nav>
+    </div>
 </header>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Toggle Hamburger Menu Mobile
+        const menuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const hamburgerIcon = document.getElementById("hamburger-icon");
+        const closeIcon = document.getElementById("close-icon");
+
+        menuBtn.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        });
+
+        // Toggle Submenu Programs di Mobile
+        const mobileProgramsBtn = document.getElementById("mobile-programs-btn");
+        const mobileProgramsSub = document.getElementById("mobile-programs-sub");
+        const mobileArrow = document.getElementById("mobile-arrow");
+
+        mobileProgramsBtn.addEventListener("click", function () {
+            mobileProgramsSub.classList.toggle("hidden");
+            mobileArrow.classList.toggle("rotate-180");
+        });
+
+        // Active State Link Normalization logic
         const normalizePath = (path) => {
             if (!path) return '/';
             return path.replace(/\.html$/, '').replace(/\/$/, '') || '/';
@@ -68,7 +138,6 @@
 
             const linkPath = normalizePath(href);
 
-            // Cek apakah URL sekarang cocok dengan href
             if (currentPath === linkPath) {
                 if (linkPath.includes('program')) {
                     link.classList.add('dropdown-item-active', 'bg-rose-50', 'text-rose-700');

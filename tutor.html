@@ -12,19 +12,32 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
+        /* Hero Background Pattern */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(159, 18, 57, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(159, 18, 57, 0.04) 1px, transparent 1px);
+        }
     </style>
 </head>
 
-<body class="antialiased text-slate-800 bg-[#FAF6F0]">
+<body class="antialiased text-slate-800 bg-[#FAF6F0] selection:bg-rose-500 selection:text-white">
 
     <!-- ============================================= -->
     <!-- HERO + NAVBAR CONTAINER -->
     <!-- ============================================= -->
     <div
-        class="relative bg-gradient-to-br from-[#F5ECE1] via-[#FAF6F0] to-[#F3E5D8] text-slate-800 border-b border-rose-900/10">
-        <!-- Accent Glow Light -->
+        class="relative bg-gradient-to-br from-[#FFF8F0] via-[#FAF6F0] to-[#F3E5D8] text-slate-800 border-b border-rose-900/10 overflow-hidden bg-grid-pattern">
+
+        <!-- Ambient Glow Elements -->
         <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-rose-400/15 blur-[120px] pointer-events-none">
+            class="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-rose-400/20 blur-[130px] rounded-full pointer-events-none">
+        </div>
+        <div class="absolute top-1/2 -left-20 w-80 h-80 bg-amber-300/20 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div class="absolute top-1/3 -right-20 w-80 h-80 bg-rose-300/20 blur-[100px] rounded-full pointer-events-none">
         </div>
 
         <div class="relative z-10">
@@ -32,15 +45,17 @@
             <load src="src/components/navbar.html" />
 
             <!-- 2. HERO TUTOR -->
-            <section class="container mx-auto px-6 py-16 md:py-20 text-center">
-                <div class="container mx-auto px-6 text-center max-w-4xl">
+            <section class="container mx-auto px-6 py-16 md:py-24 text-center">
+                <div class="max-w-4xl mx-auto">
                     <span
-                        class="inline-block px-4 py-1.5 rounded-full bg-rose-100 border border-rose-200 text-rose-800 text-xs sm:text-sm font-bold mb-4 shadow-sm">
-                        🎓 Pengajar Profesional & Bersertifikat
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-100/80 backdrop-blur-md border border-rose-200/80 text-rose-800 text-xs sm:text-sm font-bold mb-6 shadow-sm">
+                        <span>🎓</span> Pengajar Profesional & Bersertifikat
                     </span>
-                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-                        Belajar Langsung Bersama <span
-                            class="bg-gradient-to-r from-rose-700 to-amber-600 bg-clip-text text-transparent">Tutor
+                    <h1
+                        class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                        Belajar Langsung Bersama <br class="hidden sm:inline" />
+                        <span
+                            class="bg-gradient-to-r from-rose-800 via-rose-600 to-amber-600 bg-clip-text text-transparent">Tutor
                             Praktisi</span> Terbaik
                     </h1>
                     <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
@@ -55,15 +70,38 @@
     <!-- ============================================= -->
     <!-- 3. LIST PROFIL TUTOR -->
     <!-- ============================================= -->
-    <section class="py-20 bg-[#FAF6F0]">
-        <div class="container mx-auto px-6">
+    <section class="py-20 relative bg-[#FAF6F0] overflow-hidden">
+        <!-- Background Elements (Pola Grid & Layer Visual) -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-60 pointer-events-none">
+        </div>
+
+        <!-- Ambient & Glowing Accents (Lebih terlihat & berwarna) -->
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-rose-300/30 blur-[90px] rounded-full pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/2 right-0 w-[30rem] h-[30rem] bg-amber-200/40 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div class="absolute -bottom-20 left-1/3 w-80 h-80 bg-rose-200/40 blur-[80px] rounded-full pointer-events-none">
+        </div>
+
+        <!-- Decorative Curved Line (Visual Accent) -->
+        <svg class="absolute top-10 left-0 text-rose-200/40 w-full h-auto pointer-events-none" viewBox="0 0 1440 320"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,160 Q360,280 720,160 T1440,160" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-dasharray="8 8" />
+        </svg>
+
+        <div class="container mx-auto px-6 relative z-10">
 
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">Meet Our Team</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-4">
+                <span
+                    class="text-xs font-extrabold text-rose-700 uppercase tracking-widest bg-rose-100/80 px-3.5 py-1.5 rounded-full border border-rose-300/60 shadow-sm">Meet
+                    Our Team</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">
                     Pilih Tutor Favoritmu
                 </h2>
-                <p class="text-slate-600 text-sm sm:text-base">
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                     Semua tutor telah melewati seleksi ketat untuk memastikan standar pengajaran interaktif dan ramah
                     pemula.
                 </p>
@@ -72,89 +110,236 @@
             <!-- Grid Tutor -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Tutor 1 -->
+                <!-- Tutor 1: Ilman -->
                 <div
-                    class="bg-white rounded-3xl overflow-hidden border border-rose-900/10 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
                     <div>
-                        <div class="h-64 bg-slate-200 relative overflow-hidden">
-                            <img src="../src/assets/tutor-1.jpg" alt="Ilman (李聪)" class="w-full h-full object-cover" />
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/ilman.png" alt="Ilman (李聪)"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
                             <span
-                                class="absolute top-4 right-4 bg-rose-700 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                                Native Speaker
+                                class="absolute top-4 right-4 bg-amber-600/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-amber-400/40">
+                                Bilingual Expert
                             </span>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">Ilman (李聪)</h3>
-                            <p class="text-xs text-rose-700 font-semibold mb-4">International Master Education - Fujian
-                                Normal University</p>
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">Ilman
+                                (李聪)</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">International Master
+                                Education - Fujian Normal University</p>
                             <p class="text-slate-600 text-xs leading-relaxed mb-6">
                                 Spesialisasi HSK 6 Certified dan Business Mandarin. Pengalaman mengajar lebih dari 6
                                 tahun untuk profesional Indonesia.
                             </p>
                             <div class="flex flex-wrap gap-2 text-[11px] font-medium">
-                                <span class="bg-rose-50 text-rose-800 px-2.5 py-1 rounded-md">HSK 6 Certified</span>
-                                <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md">Chinese Government
-                                    Scholarship Awardee 2018</span>
-                                <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md">6+ Tahun Exp</span>
+                                <span class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">HSK
+                                    6 Certified</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Chinese
+                                    Government Scholarship Awardee 2018</span>
+                                <span
+                                    class="bg-slate-100 border border-slate-200 text-slate-700 px-2.5 py-1 rounded-lg">6+
+                                    Tahun Exp</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tutor 2 -->
+                <!-- Tutor 2: Kesya Marcella -->
                 <div
-                    class="bg-white rounded-3xl overflow-hidden border border-rose-900/10 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
                     <div>
-                        <div class="h-64 bg-slate-200 relative overflow-hidden">
-                            <img src="../src/assets/tutor-2.jpg" alt="Kesya Marcella (詹淑霞)"
-                                class="w-full h-full object-cover" />
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/kesya.png" alt="Kesya Marcella (詹淑霞)"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
                             <span
-                                class="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                                class="absolute top-4 right-4 bg-amber-600/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-amber-400/40">
                                 Bilingual Expert
                             </span>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">Kesya Marcella (詹淑霞)</h3>
-                            <p class="text-xs text-rose-700 font-semibold mb-4">International Exchange - Winter
-                                Programme Student at Nanchang University</p>
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">Kesya
+                                Marcella (詹淑霞)</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">International Exchange -
+                                Winter Programme Student at Nanchang University</p>
                             <p class="text-slate-600 text-xs leading-relaxed mb-6">
                                 Ahli mengajar pemula dari nol dengan pendekatan seru & interaktif. Paham betul kendala
                                 orang Indonesia saat belajar tata bahasa Mandarin.
                             </p>
                             <div class="flex flex-wrap gap-2 text-[11px] font-medium">
-                                <span class="bg-rose-50 text-rose-800 px-2.5 py-1 rounded-md">HSK 4 Certified</span>
-                                <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md">Confucius Institute
-                                    Scholarship Awardee 2018</span>
+                                <span class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">HSK
+                                    4 Certified</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Confucius
+                                    Institute Scholarship Awardee 2018</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tutor 3 -->
+                <!-- Tutor 3: Sebti Damayanti -->
                 <div
-                    class="bg-white rounded-3xl overflow-hidden border border-rose-900/10 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
                     <div>
-                        <div class="h-64 bg-slate-200 relative overflow-hidden">
-                            <img src="../src/assets/tutor-3.jpg" alt="Sebti Damayanti Supriyanto (沈碧缇)"
-                                class="w-full h-full object-cover" />
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/sebti.png" alt="Sebti Damayanti Supriyanto (沈碧缇)"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
                             <span
-                                class="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                                class="absolute top-4 right-4 bg-amber-600/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-amber-400/40">
                                 Bilingual Expert
                             </span>
                         </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold text-slate-900 mb-1">Sebti Damayanti Supriyanto (沈碧缇)</h3>
-                            <p class="text-xs text-rose-700 font-semibold mb-4">Pendidikan Bahasa Mandarin - Universitas
-                                Negeri Surabaya</p>
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">Sebti
+                                Damayanti Supriyanto (沈碧缇)</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">Pendidikan Bahasa
+                                Mandarin - Universitas Negeri Surabaya</p>
                             <p class="text-slate-600 text-xs leading-relaxed mb-6">
                                 Expert di dunia pendidikan Mandarin. Berpengalaman mengajar murid Indonesia dari
                                 berbagai usia, mulai dari anak-anak hingga profesional.
                             </p>
                             <div class="flex flex-wrap gap-2 text-[11px] font-medium">
-                                <span class="bg-rose-50 text-rose-800 px-2.5 py-1 rounded-md">HSKK Intermediate
-                                    2025</span>
-                                <span class="bg-amber-50 text-amber-800 px-2.5 py-1 rounded-md">Guangzhou Preschool
-                                    Teacher College</span>
+                                <span
+                                    class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">HSKK
+                                    Intermediate 2025</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Guangzhou
+                                    Preschool Teacher College</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutor 4: Elsa Chen -->
+                <div
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/elsa.png" alt="Elsa Chen"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
+                            <span
+                                class="absolute top-4 right-4 bg-rose-700/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-rose-500/40">
+                                Native Speaker
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">Elsa
+                                Chen</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">Master Degree in
+                                Management in China</p>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                                Elsa Chen dari Tiongkok memiliki gelar Magister Manajemen dan sertifikasi CET-6. Siap
+                                membimbing belajar Mandarin secara otentik, interaktif, dan mudah dipahami.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-medium">
+                                <span
+                                    class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">Native
+                                    Speaker</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">College
+                                    English Test 6 (CET-6)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutor 5: Shania -->
+                <div
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/shania.png" alt="Shania (舒雯)"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
+                            <span
+                                class="absolute top-4 right-4 bg-amber-600/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-amber-400/40">
+                                Bilingual Expert
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">
+                                Shania (舒雯)</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">Business Administration -
+                                NCCU Taiwan</p>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                                Memiliki pemahaman mendalam tentang tata bahasa Mandarin Tradisional & Konvensi Bisnis.
+                                Siap membantu persiapan studi ke Taiwan dan komunikasi bisnis.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-medium">
+                                <span class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">HSK
+                                    5 Certified</span>
+                                <span
+                                    class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">TOCFL
+                                    Level 4</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Student
+                                    Exchange Program NUS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutor 6: Rahmat Kahfi Ardani -->
+                <div
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/rahmat.png" alt="Rahmat Kahfi Ardani (林睿凯)"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
+                            <span
+                                class="absolute top-4 right-4 bg-amber-600/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-amber-400/40">
+                                Bilingual Expert
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">
+                                Rahmat Kahfi Ardani (林睿凯)</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">Sastra China -
+                                Universitas Indonesia</p>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                                Fokus pada penguasaan fondasi bahasa, struktur percakapan harian, dan budaya Tiongkok
+                                dengan metode pengajaran yang terstruktur.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-medium">
+                                <span class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">HSK
+                                    4 Certified</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Beasiswa
+                                    S1 INTI</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Beasiswa
+                                    S2 LPDP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tutor 7: Jenny Yunawan -->
+                <div
+                    class="group bg-white/90 backdrop-blur-md rounded-3xl overflow-hidden border border-rose-200/80 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="h-64 relative overflow-hidden flex items-center justify-center p-2">
+                            <img src="/src/assets/jenny.png" alt="Jenny Yunawan (李嘉玲)"
+                                class="w-full h-full object-contain group-hover:scale-105 transition duration-500" />
+                            <span
+                                class="absolute top-4 right-4 bg-amber-600/95 backdrop-blur-md text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md border border-amber-400/40">
+                                Bilingual Expert
+                            </span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-rose-700 transition">Jenny
+                                Yunawan (李嘉玲)</h3>
+                            <p class="text-xs text-rose-700 font-semibold mb-4 leading-normal">Universitas Widya Kartika
+                            </p>
+                            <p class="text-slate-600 text-xs leading-relaxed mb-6">
+                                Berpengalaman dalam program pertukaran pelajar di Tiongkok. Siap mendampingi belajar
+                                percakapan dasar hingga persiapan ujian HSK.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-[11px] font-medium">
+                                <span class="bg-rose-50 border border-rose-200 text-rose-800 px-2.5 py-1 rounded-lg">HSK
+                                    4 Certified</span>
+                                <span
+                                    class="bg-amber-50 border border-amber-200 text-amber-800 px-2.5 py-1 rounded-lg">Student
+                                    Exchange Program College of Chinese Student</span>
                             </div>
                         </div>
                     </div>
@@ -167,24 +352,39 @@
     <!-- ============================================= -->
     <!-- 4. STANDAR KUALIFIKASI TUTOR -->
     <!-- ============================================= -->
-    <section class="bg-[#F5ECE1] py-20 border-t border-rose-900/5">
-        <div class="container mx-auto px-6">
+    <section class="bg-[#F5ECE1] relative py-20 border-t border-rose-900/10 overflow-hidden">
+        <!-- Grid Overlay Visual -->
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none">
+        </div>
+
+        <!-- Glow Orbs (Lebih Intens) -->
+        <div class="absolute -bottom-10 left-10 w-96 h-96 bg-rose-300/35 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div class="absolute top-0 right-10 w-96 h-96 bg-amber-300/25 blur-[100px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-bold text-rose-700 uppercase tracking-wider">Kualitas Terjamin</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-1 mb-4">
+                <span
+                    class="text-xs font-extrabold text-rose-700 uppercase tracking-widest bg-rose-100/80 px-3.5 py-1.5 rounded-full border border-rose-300/60 shadow-sm">Kualitas
+                    Terjamin</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 mb-4">
                     Bagaimana Kami Memilih Tutor?
                 </h2>
-                <p class="text-slate-600 text-sm sm:text-base">
+                <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
                     Kami memastikan setiap pengajar tidak hanya menguasai bahasa Mandarin tetapi juga memiliki metode
                     pengajaran yang mudah dipahami.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm text-center">
+                <!-- Card Standar 1 -->
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 text-center relative overflow-hidden group">
                     <div
-                        class="w-12 h-12 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-rose-300/60 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                         </svg>
@@ -196,10 +396,12 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm text-center">
+                <!-- Card Standar 2 -->
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 text-center relative overflow-hidden group">
                     <div
-                        class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        class="w-16 h-16 bg-gradient-to-br from-amber-100 to-amber-200 text-amber-800 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-amber-300/60 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
@@ -211,10 +413,12 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-rose-900/10 shadow-sm text-center">
+                <!-- Card Standar 3 -->
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition duration-300 text-center relative overflow-hidden group">
                     <div
-                        class="w-12 h-12 bg-rose-100 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
+                        class="w-16 h-16 bg-gradient-to-br from-rose-100 to-rose-200 text-rose-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm border border-rose-300/60 group-hover:scale-110 transition duration-300">
+                        <svg class="w-8 h-8 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -228,23 +432,35 @@
             </div>
         </div>
     </section>
-
     <!-- ============================================= -->
     <!-- 5. CALL TO ACTION -->
     <!-- ============================================= -->
-    <section class="bg-gradient-to-r from-rose-900 via-rose-800 to-rose-950 py-16 text-white text-center">
-        <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-200 mb-4">
+    <section
+        class="relative bg-gradient-to-r from-rose-950 via-rose-900 to-rose-950 py-20 text-white text-center overflow-hidden">
+        <!-- Glow Orbs Inside CTA -->
+        <div class="absolute -top-24 -left-24 w-80 h-80 bg-rose-500/20 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div
+            class="absolute -bottom-24 -right-24 w-80 h-80 bg-amber-500/20 blur-[100px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="container mx-auto px-6 max-w-3xl relative z-10">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-amber-200 mb-4 tracking-tight">
                 Siap Belajar Bersama Tutor Pilihanmu?
             </h2>
-            <p class="text-rose-100 mb-8 text-sm sm:text-base leading-relaxed">
+            <p class="text-rose-100/90 mb-8 text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
                 Hubungi tim akademik kami untuk mendiskusikan jadwal dan mencocokkan tutor yang tepat sesuai
                 kebutuhanmu.
             </p>
-            <a href="https://wa.me/6281290458399?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20mengenai%20pilihan%20tutor"
+            <a href="https://wa.me/6281779493263?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20mengenai%20pilihan%20tutor"
                 target="_blank"
-                class="inline-block px-8 py-4 bg-white text-rose-900 hover:bg-rose-50 font-bold rounded-full shadow-lg transition hover:scale-105 text-sm sm:text-base">
-                Konsultasi Pilihan Tutor
+                class="inline-flex items-center gap-2 px-8 py-4 bg-white text-rose-900 hover:bg-amber-100 font-extrabold rounded-full shadow-xl transition-all duration-300 hover:scale-105 text-sm sm:text-base">
+                <span>Konsultasi Pilihan Tutor</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
             </a>
         </div>
     </section>
