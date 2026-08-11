@@ -12,6 +12,44 @@
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
+
+        /* --- UPDATE PADA CSS CAROUSEL --- */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                /* Harus bergeser setengah dari total lebar ul (karena kita duplikasi) */
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-scroll {
+            display: flex;
+            /* Lebar total ul: (Lebar item + gap) * jumlah total item (asli + duplikat) */
+            /* Di sini: (350px + 64px gap) * 8 item = 3312px */
+            width: calc((350px + 4rem) * 8);
+            animation: scroll 25s linear infinite;
+            /* Sedikit diperlambat karena logo lebih besar */
+        }
+
+        .animate-scroll:hover {
+            animation-play-state: paused;
+        }
+
+        .logo-carousel-item {
+            /* Lebar item dibesarkan agar proporsional dengan gambar yang membesar */
+            width: 350px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Padding samping dikurangi, kita andalkan gap pada ul */
+            padding: 0 10px;
+        }
+
+        /* -------------------------------- */
     </style>
 </head>
 
@@ -20,15 +58,22 @@
     <!-- ============================================= -->
     <!-- HERO + NAVBAR CONTAINER -->
     <!-- ============================================= -->
-    <div class="relative bg-gradient-to-br from-[#F5ECE1] via-[#FAF6F0] to-[#F3E5D8] text-slate-800 border-b border-rose-900/10 overflow-hidden">
+    <div
+        class="relative bg-gradient-to-br from-[#F5ECE1] via-[#FAF6F0] to-[#F3E5D8] text-slate-800 border-b border-rose-900/10 overflow-hidden">
         <!-- Background Elements (Grid & Ambient Orbs) -->
-        <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none"></div>
-        <div class="absolute -top-20 -left-20 w-96 h-96 bg-rose-300/30 blur-[100px] rounded-full pointer-events-none"></div>
-        <div class="absolute top-1/2 -right-20 w-96 h-96 bg-amber-300/30 blur-[110px] rounded-full pointer-events-none"></div>
+        <div
+            class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none">
+        </div>
+        <div class="absolute -top-20 -left-20 w-96 h-96 bg-rose-300/30 blur-[100px] rounded-full pointer-events-none">
+        </div>
+        <div class="absolute top-1/2 -right-20 w-96 h-96 bg-amber-300/30 blur-[110px] rounded-full pointer-events-none">
+        </div>
 
         <!-- Decorative Curve Line -->
-        <svg class="absolute top-12 left-0 text-rose-200/50 w-full h-auto pointer-events-none" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,96 Q360,280 720,120 T1440,160" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="8 8"/>
+        <svg class="absolute top-12 left-0 text-rose-200/50 w-full h-auto pointer-events-none" viewBox="0 0 1440 320"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,96 Q360,280 720,120 T1440,160" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-dasharray="8 8" />
         </svg>
 
         <div class="relative z-10">
@@ -38,14 +83,18 @@
             <!-- HERO TESTIMONI -->
             <section class="container mx-auto px-6 py-16 md:py-20 text-center">
                 <div class="container mx-auto px-6 text-center max-w-4xl">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-rose-100/90 border border-rose-300/60 text-rose-800 text-xs sm:text-sm font-bold mb-4 shadow-sm backdrop-blur-sm">
+                    <span
+                        class="inline-block px-4 py-1.5 rounded-full bg-rose-100/90 border border-rose-300/60 text-rose-800 text-xs sm:text-sm font-bold mb-4 shadow-sm backdrop-blur-sm">
                         🏢 Kepercayaan Klien Perusahaan
                     </span>
                     <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-                        Diterapkan oleh Perusahaan Terkemuka di <span class="bg-gradient-to-r from-rose-700 to-amber-600 bg-clip-text text-transparent">Xuehan Academy</span>
+                        Diterapkan oleh Perusahaan Terkemuka di <span
+                            class="bg-gradient-to-r from-rose-700 to-amber-600 bg-clip-text text-transparent">Xuehan
+                            Academy</span>
                     </h1>
                     <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-                        Simak pengalaman dan dampak pelatihan Bahasa Mandarin profesional yang dirasakan oleh berbagai tim, eksekutif, dan profesional korporat.
+                        Simak pengalaman dan dampak pelatihan Bahasa Mandarin profesional yang dirasakan oleh berbagai
+                        tim, eksekutif, dan profesional korporat.
                     </p>
                 </div>
             </section>
@@ -53,51 +102,129 @@
     </div>
 
     <!-- ============================================= -->
+    <!-- SECTION LOGO BERGERAK (NEW & UPDATED) -->
+    <!-- ============================================= -->
+    <section class="py-16 bg-white border-b border-slate-100 overflow-hidden relative z-10">
+        <div class="container mx-auto px-6 mb-12 text-center">
+            <p class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Telah Bekerja Sama Dengan</p>
+        </div>
+
+        <!-- Container Utama Carousel -->
+        <div
+            class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+
+            <!-- List Logo - Menambahkan gap-16 (space-x-16) agar jarak antar logo lebih lega saat membesar -->
+            <ul class="flex items-center justify-center md:justify-start animate-scroll space-x-16">
+
+                <!-- SET 1 (4 Logo Asli) -->
+                <!-- Logo 1: PT Pegasus -->
+                <li class="logo-carousel-item">
+                    <!-- Ukuran h-24 md:h-32 (dibesarkan signifikan dari h-16/h-20) -->
+                    <img src="./src/assets/company/pegasussolusindo_logo.jpg" alt="Logo PT Pegasus"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+
+                <!-- Logo 2: Surveyor ID -->
+                <li class="logo-carousel-item">
+                    <img src="./src/assets/company/suveryor_id_logo.jpg" alt="Logo Surveyor"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+
+                <!-- Logo 3: ID Survey -->
+                <li class="logo-carousel-item">
+                    <img src="./src/assets/company/id_survey.png" alt="Logo ID Survey"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+
+                <!-- Logo 4: Topwe Lawfirm -->
+                <li class="logo-carousel-item">
+                    <img src="./src/assets/company/topwe2.png" alt="Logo Topwe Lawfirm"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+
+                <!-- SET 2 (Duplikasi untuk Loop) -->
+                <li class="logo-carousel-item" aria-hidden="true">
+                    <img src="./src/assets/company/pegasussolusindo_logo.jpg" alt="Logo PT Pegasus"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+                <li class="logo-carousel-item" aria-hidden="true">
+                    <img src="./src/assets/company/suveryor_id_logo.jpg" alt="Logo Surveyor"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+                <li class="logo-carousel-item" aria-hidden="true">
+                    <img src="./src/assets/company/id_survey.png" alt="Logo ID Survey"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+                <li class="logo-carousel-item" aria-hidden="true">
+                    <img src="./src/assets/company/topwe2.png" alt="Logo Topwe Lawfirm"
+                        class="h-24 md:h-32 w-auto object-contain grayscale hover:grayscale-0 transition opacity-80 hover:opacity-100" />
+                </li>
+
+            </ul>
+            0
+        </div>
+    </section>
+
+    <!-- ============================================= -->
     <!-- LIST TESTIMONI GRID & STATS -->
     <!-- ============================================= -->
     <section class="py-20 bg-[#FAF6F0] relative overflow-hidden">
         <!-- Background Elements (Linear Grid Overlay & Glowing Accents) -->
-        <div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
-        <div class="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-rose-200/40 blur-[120px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-amber-200/40 blur-[120px] rounded-full pointer-events-none"></div>
+        <div
+            class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none">
+        </div>
+        <div
+            class="absolute top-1/4 -left-20 w-[30rem] h-[30rem] bg-rose-200/40 blur-[120px] rounded-full pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-1/4 -right-20 w-[30rem] h-[30rem] bg-amber-200/40 blur-[120px] rounded-full pointer-events-none">
+        </div>
 
         <div class="container mx-auto px-6 relative z-10">
 
             <!-- Stats Highlight -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20 max-w-5xl mx-auto">
-                <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
                     <h3 class="text-3xl font-extrabold text-rose-700 mb-1">50+</h3>
                     <p class="text-xs text-slate-600 font-medium">Klien Korporat</p>
                 </div>
-                <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
                     <h3 class="text-3xl font-extrabold text-rose-700 mb-1">99%</h3>
                     <p class="text-xs text-slate-600 font-medium">Retensi Pelatihan Kerjasama</p>
                 </div>
-                <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
                     <h3 class="text-3xl font-extrabold text-rose-700 mb-1">4.9/5.0</h3>
                     <p class="text-xs text-slate-600 font-medium">Kepuasan Manajemen</p>
                 </div>
-                <div class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-rose-200/80 text-center shadow-sm hover:shadow-md transition">
                     <h3 class="text-3xl font-extrabold text-rose-700 mb-1">100%</h3>
                     <p class="text-xs text-slate-600 font-medium">Kurikulum Disesuaikan (Custom)</p>
                 </div>
             </div>
 
-            <!-- Testimonial Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial Cards Grid - Menyesuaikan lg:grid-cols-2 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 
                 <!-- Card 1: PT Pegasus -->
-                <div class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 text-amber-500 mb-4">
                             ★★★★★
                         </div>
                         <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                            "Program Corporate Training dari Xuehan Academy sangat membantu tim operasional kami dalam berkomunikasi dengan ekspatriat dan mitra bisnis Tiongkok. Materi disesuaikan langsung dengan terminologi industri kami."
+                            "Program Corporate Training dari Xuehan Academy sangat membantu tim operasional kami dalam
+                            berkomunikasi dengan ekspatriat dan mitra bisnis Tiongkok. Materi disesuaikan langsung
+                            dengan terminologi industri kami."
                         </p>
                     </div>
                     <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                        <div class="w-12 h-12 rounded-full bg-rose-100 border border-rose-300/60 flex items-center justify-center font-bold text-rose-800 text-base shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-full bg-rose-100 border border-rose-300/60 flex items-center justify-center font-bold text-rose-800 text-base shadow-sm">
                             P
                         </div>
                         <div>
@@ -108,17 +235,21 @@
                 </div>
 
                 <!-- Card 2: PT Surveyor Indonesia -->
-                <div class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 text-amber-500 mb-4">
                             ★★★★★
                         </div>
                         <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                            "Pembelajaran Business Mandarin yang terstruktur memudahkan staf teknis kami memahami inspeksi serta laporan standar internasional. Pengajar sangat profesional dan fleksibel dengan jadwal kerja perusahaan."
+                            "Pembelajaran Business Mandarin yang terstruktur memudahkan staf teknis kami memahami
+                            inspeksi serta laporan standar internasional. Pengajar sangat profesional dan fleksibel
+                            dengan jadwal kerja perusahaan."
                         </p>
                     </div>
                     <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 border border-amber-300/60 flex items-center justify-center font-bold text-amber-800 text-base shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-full bg-amber-100 border border-amber-300/60 flex items-center justify-center font-bold text-amber-800 text-base shadow-sm">
                             S
                         </div>
                         <div>
@@ -129,38 +260,42 @@
                 </div>
 
                 <!-- Card 3: ID Survey -->
-                <div class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 text-amber-500 mb-4">
                             ★★★★★
                         </div>
                         <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                            "Sebagai bagian dari Holding BUMN Jasa Survei, kemampuan bahasa Mandarin sangat krusial dalam proyek-proyek lintas negara. Xuehan Academy memberikan pelatihan intensif dengan progres yang terukur."
+                            "Sebagai bagian dari Holding BUMN Jasa Survei, kemampuan bahasa Mandarin sangat krusial
+                            dalam proyek-proyek lintas negara. Xuehan Academy memberikan pelatihan intensif dengan
+                            progres yang terukur."
                         </p>
                     </div>
                     <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                        <div class="w-12 h-12 rounded-full bg-rose-100 border border-rose-300/60 flex items-center justify-center font-bold text-rose-800 text-base shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-full bg-rose-100 border border-rose-300/60 flex items-center justify-center font-bold text-rose-800 text-base shadow-sm">
                             I
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Divisi Pengembangan SDM</h4>
-                            <p class="text-xs text-slate-500">ID Survey • Executive Training</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 4: Topwe Lawfirm -->
-                <div class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                <div
+                    class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 text-amber-500 mb-4">
                             ★★★★★
                         </div>
                         <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                            "Materi Legal Mandarin yang diajarkan sangat presisi untuk kebutuhan negosiasi kontrak dan penanganan dokumen hukum. Sangat direkomendasikan untuk firma hukum yang menangani klien-klien Tiongkok."
+                            "Materi Legal Mandarin yang diajarkan sangat presisi untuk kebutuhan negosiasi kontrak dan
+                            penanganan dokumen hukum. Sangat direkomendasikan untuk firma hukum yang menangani
+                            klien-klien Tiongkok."
                         </p>
                     </div>
                     <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 border border-amber-300/60 flex items-center justify-center font-bold text-amber-800 text-base shadow-sm">
+                        <div
+                            class="w-12 h-12 rounded-full bg-amber-100 border border-amber-300/60 flex items-center justify-center font-bold text-amber-800 text-base shadow-sm">
                             T
                         </div>
                         <div>
@@ -169,45 +304,110 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Card 5: Partner Perusahaan Multinasional -->
-                <div class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+    <!-- ============================================= -->
+    <!-- SECTION TESTIMONI INDIVIDU (NEW) -->
+    <!-- ============================================= -->
+    <section class="py-20 bg-white relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+                    Apa Kata <span class="text-rose-700">Alumni</span> Kami?
+                </h2>
+                <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+                    Dengarkan pengalaman langsung dari profesional yang telah meningkatkan karier mereka bersama Xuehan
+                    Academy.
+                </p>
+            </div>
+
+            <!-- Grid Testimoni 3 Kolom -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Review 1 -->
+                <div
+                    class="bg-[#FAF6F0] p-8 rounded-3xl border border-rose-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                     <div>
-                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                        <div class="flex items-center gap-1 text-amber-500 mb-6">
                             ★★★★★
                         </div>
-                        <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                            "Pendekatan pengajaran berbasis kasus bisnis nyata membuat karyawan kami cepat beradaptasi. Komunikasi antar tim lokal dan eksekutif asing kini jauh lebih lancar dan minim miskomunikasi."
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-8 italic">
+                            "Seru banget belajar di Xuehan Academy😍 bareng laoshi yang super duper humble dengan
+                            jelasin materinya mudah dipahami dan kelas yang interaktif. Sebagai first timer di kelas
+                            beginner, aku ngerasa terbantu sekali buat bisa belajar Mandarin dengan waktu yang
+                            fleksibel"
                         </p>
                     </div>
-                    <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                        <div class="w-12 h-12 rounded-full bg-rose-100 border border-rose-300/60 flex items-center justify-center font-bold text-rose-800 text-base shadow-sm">
-                            M
-                        </div>
+                    <div class="flex items-center gap-4 pt-6 border-t border-rose-200/50">
+                        <!-- Placeholder Foto: Ganti src dengan link foto asli -->
+                        <img src="./src/assets/ananda-review.png" alt="Foto Ananda"
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm">
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Human Capital Management</h4>
-                            <p class="text-xs text-slate-500">Mitra Industri Manufaktur • Group Private</p>
+                            <h4 class="font-bold text-slate-900 text-base">Ananda</h4>
+                            <p
+                                class="text-xs text-rose-800 font-semibold bg-rose-100 px-2 py-0.5 rounded-full inline-block mt-1">
+                                Beginner Level Xuehan Student</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 6: Klien Korporat Keuangan & Logistik -->
-                <div class="bg-white/90 backdrop-blur-md p-8 rounded-3xl border border-rose-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between">
+                <!-- Review 2 -->
+                <div
+                    class="bg-[#FAF6F0] p-8 rounded-3xl border border-rose-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
                     <div>
-                        <div class="flex items-center gap-1 text-amber-500 mb-4">
+                        <div class="flex items-center gap-1 text-amber-500 mb-6">
                             ★★★★★
                         </div>
-                        <p class="text-slate-700 text-sm leading-relaxed mb-6 italic">
-                            "Fasilitas pemantauan hasil belajar dan feedback berkala dari tutor sangat membantu kami mengukur efektivitas ROI investasi pelatihan karyawan perusahaan."
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-8 italic">
+                            "Belajar mandarin kini menjadi kebutuhan penting dan Xuehan Academy menawarkan metode
+                            pembelajaran yang interaktif serta menyenangkan. Bagi yang memiliki jadwal kerja padat,
+                            fleksibilitas kelas di luar jam kerja sangat membantu. Semoga Xuehan Academy semakin sukses
+                            dan terus berkembang untuk mengajar bahasa mandarin"
                         </p>
                     </div>
-                    <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
-                        <div class="w-12 h-12 rounded-full bg-amber-100 border border-amber-300/60 flex items-center justify-center font-bold text-amber-800 text-base shadow-sm">
-                            L
-                        </div>
+                    <div class="flex items-center gap-4 pt-6 border-t border-rose-200/50">
+                        <img src="./src/assets/ilham-review.png" alt="Foto Ilham"
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm">
                         <div>
-                            <h4 class="font-bold text-slate-900 text-sm">Learning & Development Team</h4>
-                            <p class="text-xs text-slate-500">Mitra Logistik & Perdagangan • Corporate Class</p>
+                            <h4 class="font-bold text-slate-900 text-base">Ilham</h4>
+                            <p
+                                class="text-xs text-rose-800 font-semibold bg-rose-100 px-2 py-0.5 rounded-full inline-block mt-1">
+                                Beginner Level Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div
+                    class="bg-[#FAF6F0] p-8 rounded-3xl border border-rose-100 shadow-sm flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-500 mb-6">
+                            ★★★★★
+                        </div>
+                        <p class="text-slate-700 text-sm sm:text-base leading-relaxed mb-8 italic">
+                            Kelas grup kemarin seru laoshi karena belajarnya
+                            santai jadi gak bikin pusing sama sekali
+                            masterinya gampang dipahami cara Sebti Laoshi
+                            ngajar juga enak dimengerti selalu mastiin kalo
+                            kita udah paham yang laoshi sampaiin.
+                            Selama belajar bahasa mandarin di Xuehan Academy, saya sangat terpesona dengan kurikulum
+                            yang disusun secara komprehensif, khususnya dalam membedah materi HSK 1 secara mendalam.
+                            laoshi-laoshi di Xuehan juga menunjukkan dedikasi yang tinggi melalui metode pengajaran yang
+                            efisien di komunikatif, selain itu, fleksibilitas dan keuntungan industrialil di luar
+                            jaringan memberi pemberian tugas rutin sangat membantu saya dalam melakukan revew materi
+                            secara efektif dan terukur"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-6 border-t border-rose-200/50">
+                        <img src="./src/assets/nina-review.png" alt="Foto Nina"
+                            class="w-14 h-14 rounded-full object-cover border-2 border-white shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Nina</h4>
+                            <p
+                                class="text-xs text-rose-800 font-semibold bg-rose-100 px-2 py-0.5 rounded-full inline-block mt-1">
+                                Kelas Beginner 1</p>
                         </div>
                     </div>
                 </div>
