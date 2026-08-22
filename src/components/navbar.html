@@ -1,12 +1,9 @@
 <header class="container mx-auto px-6 py-3 flex items-center justify-between relative">
     <!-- 1. Logo (Kiri) - Floating / Overlap Style -->
     <a href="/" class="flex items-center gap-2 z-50 -mb-6 sm:-mb-8">
-        <div class="bg-white p-2 sm:p-2.5 rounded-2xl shadow-lg border border-rose-100 flex items-center justify-center transform hover:scale-105 transition-transform duration-300">
-            <!-- Logo persegi dibuat sedikit melampaui navbar -->
-            <img src="./src/assets/logo.jpeg" alt="Xuehan Academy Logo" class="h-16 w-16 sm:h-20 sm:w-20 md:h-22 md:w-22 object-cover rounded-xl" />
-        </div>
+        <img src="./src/assets/logo-removebg.png" alt="Xuehan Academy Logo"
+            class="h-40 w-auto sm:h-40 md:h-50 lg:h-50 xl:h-50 object-contain drop-shadow-sm" />
     </a>
-
     <!-- 2. Navigation Links (Desktop - Tengah Absolut) -->
     <nav
         class="hidden lg:flex items-center gap-1 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-rose-900/10 text-sm font-medium shadow-sm absolute left-1/2 -translate-x-1/2">
@@ -25,7 +22,8 @@
 
             <!-- Menu Dropdown Desktop -->
             <div class="absolute top-full left-0 hidden group-hover:block pt-2 w-52">
-                <div class="bg-white/95 backdrop-blur-xl text-slate-700 rounded-2xl shadow-xl py-3 border border-rose-100">
+                <div
+                    class="bg-white/95 backdrop-blur-xl text-slate-700 rounded-2xl shadow-xl py-3 border border-rose-100">
                     <a href="/program-private"
                         class="nav-link block px-4 py-2.5 hover:bg-rose-50 hover:text-rose-700 transition">Private</a>
                     <a href="/program-group"
@@ -68,27 +66,35 @@
     <div id="mobile-menu"
         class="hidden lg:hidden absolute top-full left-0 right-0 w-full bg-white/95 backdrop-blur-xl border-b border-rose-100 shadow-xl px-6 py-4 transition-all duration-300 z-40">
         <nav class="flex flex-col gap-2">
-            <a href="/" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Home</a>
-            
+            <a href="/"
+                class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Home</a>
+
             <!-- Accordion Programs Mobile -->
             <div>
                 <button id="mobile-programs-btn"
                     class="w-full px-4 py-2.5 text-left text-slate-700 hover:text-rose-700 flex items-center justify-between transition rounded-xl">
                     <span>Programs</span>
-                    <svg id="mobile-arrow" class="w-4 h-4 fill-current opacity-70 transition-transform duration-200" viewBox="0 0 20 20">
-                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                    <svg id="mobile-arrow" class="w-4 h-4 fill-current opacity-70 transition-transform duration-200"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                     </svg>
                 </button>
                 <div id="mobile-programs-sub" class="hidden pl-4 pr-2 py-1 space-y-1">
-                    <a href="/program-private" class="nav-link block px-4 py-2 rounded-lg text-slate-600 hover:bg-rose-50 hover:text-rose-700 transition text-sm">Private</a>
-                    <a href="/program-group" class="nav-link block px-4 py-2 rounded-lg text-slate-600 hover:bg-rose-50 hover:text-rose-700 transition text-sm">Group</a>
+                    <a href="/program-private"
+                        class="nav-link block px-4 py-2 rounded-lg text-slate-600 hover:bg-rose-50 hover:text-rose-700 transition text-sm">Private</a>
+                    <a href="/program-group"
+                        class="nav-link block px-4 py-2 rounded-lg text-slate-600 hover:bg-rose-50 hover:text-rose-700 transition text-sm">Group</a>
                 </div>
             </div>
 
-            <a href="/about" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">About</a>
-            <a href="/tutor" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Tutor</a>
-            <a href="/testimoni" class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Testimoni</a>
-            
+            <a href="/about"
+                class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">About</a>
+            <a href="/tutor"
+                class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Tutor</a>
+            <a href="/testimoni"
+                class="nav-link px-4 py-2.5 rounded-xl text-slate-700 hover:bg-rose-50 hover:text-rose-700 transition">Testimoni</a>
+
             <!-- CTA Button khusus layar kecil/HP -->
             <a href="https://wa.me/6281779493263" target="_blank"
                 class="sm:hidden mt-2 flex items-center justify-center gap-2.5 px-6 py-3 bg-rose-700 hover:bg-rose-800 text-white font-bold text-sm rounded-xl shadow-md transition">
