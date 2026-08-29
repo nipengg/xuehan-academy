@@ -153,3 +153,21 @@
         </div>
     </div>
 </footer>
+
+<script>
+    (function () {
+        const detector = document.getElementById('dark-mode-detector');
+
+        if (!detector) return;
+
+        const backgroundColor =
+            getComputedStyle(detector).backgroundColor;
+
+        const isForcedDark =
+            backgroundColor !== 'rgb(255, 255, 255)';
+
+        if (isForcedDark) {
+            document.documentElement.classList.add('force-light');
+        }
+    })();
+</script>
