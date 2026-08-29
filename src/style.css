@@ -11,3 +11,9 @@
 .dropdown-btn-active {
   @apply !text-rose-700 !font-semibold;
 }
+
+:root,
+html,
+body {
+  color-scheme: light only !important;
+}
